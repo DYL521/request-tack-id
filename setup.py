@@ -12,7 +12,7 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'request_id'
+NAME = 'request_tack_id'
 DESCRIPTION = 'My short description for my project.'
 URL = 'https://github.com/DYL521/request_id'
 EMAIL = '1016068291@qq.com'
@@ -105,7 +105,7 @@ setup(
     url=URL,
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
-    # py_modules=['request_id'],
+    # py_modules=['request_tack_id'],
 
     # entry_points={
     #     'console_scripts': ['mycli=mymodule:cli'],

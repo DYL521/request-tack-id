@@ -4,8 +4,8 @@ from django.core.exceptions import ImproperlyConfigured
 from django.test import RequestFactory, TestCase, override_settings
 from requests import Request
 
-from request_id import DEFAULT_NO_REQUEST_ID, local
-from request_id.middleware import RequestIDMiddleware
+from request_tack_id import DEFAULT_NO_REQUEST_ID, local
+from request_tack_id.middleware import RequestIDMiddleware
 from testproject.views import test_view
 
 

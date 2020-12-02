@@ -13,10 +13,10 @@ SECRET_KEY = 'secret'
 
 ROOT_URLCONF = "testproject.urls"
 
-INSTALLED_APPS = ["request_id"]
+INSTALLED_APPS = ["request_tack_id"]
 
 MIDDLEWARE_CLASSES = [
-    'request_id.middleware.RequestIDMiddleware',
+    'request_tack_id.middleware.RequestIDMiddleware',
     # ... other middleware goes here
 ] + list(getattr(global_settings, "MIDDLEWARE_CLASSES", []))
 
@@ -26,20 +26,20 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
-        'request_id': {
-            '()': 'request_id.filters.RequestIDFilter'
+        'request_tack_id': {
+            '()': 'request_tack_id.filters.RequestIDFilter'
         }
     },
     'formatters': {
         'standard': {
-            'format': '%(levelname)-8s [%(asctime)s] [%(request_id)s] %(name)s: %(message)s'
+            'format': '%(levelname)-8s [%(asctime)s] [%(request_tack_id)s] %(name)s: %(message)s'
         },
     },
     'handlers': {
         'mock': {
             'level': 'DEBUG',
             'class': 'testproject.handler.MockLoggingHandler',
-            'filters': ['request_id'],
+            'filters': ['request_tack_id'],
             'formatter': 'standard',
         },
     },
@@ -49,7 +49,7 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': False,
         },
-        'request_id.middleware': {
+        'request_tack_id.middleware': {
             'handlers': ['mock'],
             'level': 'DEBUG',
             'propagate': False,
